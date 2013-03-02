@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# PPA for latest node js
-add-apt-repository ppa:chris-lea/node.js  
+# PPA's
+add-apt-repository ppa:chris-lea/node.js  #nodejs
+add-apt-repository ppa:w-vollprecht/ppa  #UberWriter - Markdown editor (pandoc exports, lots of goodness)
 
 # update rep sources
 apt-get update
@@ -13,7 +14,8 @@ apt-get update
 #	nodejs
 #	curl
 #	gdebi - Command line interface to gdeb installer. (resolves dependencies, which dpkg doesn't)
-apt-get install vim git vlc nodejs curl gdebi
+#	uberwriter - Markdown editor (pandoc exports, lots of goodness)
+apt-get install vim git vlc nodejs curl gdebii uberwriter
 
 # Install Node Package Manager (NPM)
 curl -s https://npmjs.org/install.sh | sudo sh
