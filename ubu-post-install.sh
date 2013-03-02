@@ -15,7 +15,7 @@ apt-get update
 #	curl
 #	gdebi - Command line interface to gdeb installer. (resolves dependencies, which dpkg doesn't)
 #	uberwriter - Markdown editor (pandoc exports, lots of goodness)
-apt-get install vim git vlc nodejs curl gdebii uberwriter
+apt-get install vim git vlc nodejs curl gdebi uberwriter
 
 # Install Node Package Manager (NPM)
 curl -s https://npmjs.org/install.sh | sudo sh
