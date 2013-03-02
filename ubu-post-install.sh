@@ -11,4 +11,9 @@ apt-get update
 #	git
 #	vlc
 #	nodejs
-apt-get install vim git vlc nodejs
+#	curl
+#	gdebi - Command line interface to gdeb installer. (resolves dependencies, which dpkg doesn't)
+apt-get install vim git vlc nodejs curl gdebi
+
+# Install Node Package Manager (NPM)
+curl -s https://npmjs.org/install.sh | sudo sh
