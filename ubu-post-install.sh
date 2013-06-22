@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 ## Add software-properties-common and build-essential for use below
 ##  mainly required for the add-apt-repository and building software from source
