@@ -1,4 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+## update rep sources
+##==============================================================================
+    apt-get update
+
 
 ## Add software-properties-common and build-essential for use below
 ##  mainly required for the add-apt-repository and building software from source
