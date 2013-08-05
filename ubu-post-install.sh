@@ -57,4 +57,4 @@
 ##==============================================================================
     git clone https://github.com/andreafabrizi/Dropbox-Uploader.git ~/Applications/Dropbox-Uploader
     chmod +x ~/Applications/Dropbox-Uploader/dropbox_uploader.sh
-    ln -s ~/bin/dropbox_uploader.sh ~/Applications/Dropbox-Uploader/dropbox_uploader.sh
+    ln -s ~/Applications/Dropbox-Uploader/dropbox_uploader.sh ~/bin/dropbox_uploader.sh
