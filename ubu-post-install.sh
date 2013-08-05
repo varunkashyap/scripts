@@ -8,15 +8,15 @@
 ## Add software-properties-common and build-essential for use below
 ##  mainly required for the add-apt-repository and building software from source
 ##==============================================================================
-    apt-get install software-properties-common build-essential
+    apt-get install -y software-properties-common build-essential python-software-properties
 
 
 ## PPA's
 ##==============================================================================
     #nodejs
-    add-apt-repository ppa:chris-lea/node.js
+    add-apt-repository -y ppa:chris-lea/node.js
     #UberWriter - Markdown editor (pandoc exports, lots of goodness)
-    add-apt-repository ppa:w-vollprecht/ppa
+    add-apt-repository -y ppa:w-vollprecht/ppa
 
 
 ## update rep sources
@@ -36,7 +36,7 @@
     # apt-file - Search apt for package based on fileName
     # terminator - For multiple terminal sessions in a single window and much more
     # vnstat - network usage
-    apt-get install terminator vim git vlc nodejs curl gdebi uberwriter vnstat
+    apt-get install -y terminator vim git vlc nodejs curl gdebi uberwriter vnstat
 
 
 ## Install Node Package Manager (NPM)
@@ -57,4 +57,4 @@
 ##==============================================================================
     git clone https://github.com/andreafabrizi/Dropbox-Uploader.git ~/Applications/Dropbox-Uploader
     chmod +x ~/Applications/Dropbox-Uploader/dropbox_uploader.sh
-    ln -s ~/bin/dropbox_uploader.sh ~/Applications/Dropbox-Uploader.gitder/dropbox_uploader.sh
+    ln -s ~/bin/dropbox_uploader.sh ~/Applications/Dropbox-Uploader/dropbox_uploader.sh
