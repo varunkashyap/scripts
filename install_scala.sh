@@ -6,7 +6,7 @@ wget "http://www.scala-lang.org/files/archive/scala-$1.tgz"
 
 if (($?)) 
 then
-	print_stderr "Couldn't find Scala archive at the created link. Make sure the path hasn't changed on scala site"
+	print_stderr "Couldn't find Scala archive at the created link. Make sure the path hasn't changed on http://scala-lang.org"
 	exit 1
 fi
 
