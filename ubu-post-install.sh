@@ -36,7 +36,8 @@
     # apt-file - Search apt for package based on fileName
     # terminator - For multiple terminal sessions in a single window and much more
     # vnstat - network usage
-    apt-get install -y terminator vim git vlc nodejs curl gdebi uberwriter vnstat
+    # inotify-tools - allows to monitor filesystem events to run a command as soon as file changes
+    apt-get install -y terminator vim git vlc nodejs curl gdebi uberwriter vnstat inotify-tools
 
 
 ## Install Node Package Manager (NPM)
