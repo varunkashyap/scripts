@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+# Restarts the given VM by switching the bridged adapter 1 to specied network interface
+
+
+# The following line with ##\s are being used as markers to get help
+## Usage: vmup [-m] [-i] [-h]
+##                               
+##     -m    machine name or GUID
+##     -i    interface name
+##     -h    show help
+
+
+# BASH_SOURCE[0] always refers to the current script
+help=$(grep "^## " "${BASH_SOURCE[0]}" | cut -c 4-)
+VM="Hortonworks Sandbox 1.3"
+IFACE="eth0"
+VMRUNNING=1
+
+while getopts ":m:i:h" opt; do
+    case $opt in
+      m)
+	echo "Overriding machine to: $OPTARG"
+        VM=$OPTARG
+        ;;
+      i)
+	echo "Overriding interface to: $OPTARG"
+        IFACE=$OPTARG
+        ;;
+      h)
+	echo "$help"
+        exit 1
+        ;;
+      \?)
+        echo "Invalid option: - $OPTARG"
+        ;;
+    esac
+done
+
+echo "Checking VM status..."
+if [ $(VBoxManage list runningvms | grep "$VM" | wc -l) -gt 0 ]; then
+    echo "'$VM' is running"
+else 
+    echo "'$VM' is not running"
+    VMRUNNING=0
+fi
+    
+
+if [ $VMRUNNING -gt 0 ];
+then
+    echo "Shutting down VM..."
+    VBoxManage controlvm "$VM" poweroff
+    sleep 3
+fi
+
+echo "Switching bridge interface..."
+VBoxManage modifyvm "$VM" --bridgeadapter1 $IFACE
+
+echo "Starting VM..."
+VBoxManage startvm "$VM"
+
